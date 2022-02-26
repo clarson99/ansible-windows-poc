@@ -1,0 +1,20 @@
+all:
+  hosts:
+    vagrant:
+        ansible_host: 127.0.0.1
+        ansible_user: vagrant
+        ansible_password: vagrant
+        ansible_connection: winrm
+        ansible_port: 55985 # not 5986, as we would use for non-virtualized environments
+        ansible_winrm_scheme: http        
+        ansible_winrm_server_cert_validation: ignore
+        ansible_winrm_transport: basic
+    host01:
+        ansible_host: 10.0.0.23
+        ansible_user: vagrant
+        ansible_password: vagrant
+        ansible_connection: winrm
+        ansible_port: 5986 
+        ansible_winrm_scheme: https        
+        ansible_winrm_server_cert_validation: ignore
+        ansible_winrm_transport: basic

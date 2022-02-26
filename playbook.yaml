@@ -1,0 +1,15 @@
+---
+  - name: Playbook
+    hosts: all
+    tasks:
+      - name: Ping the Windows Server
+        win_ping:
+      - name: Create Temp dir
+        ansible.windows.win_file:
+          path: 'C:\Temp'
+          state: directory
+      - name: Touch a file (creates if not present, updates modification time if present)
+        ansible.windows.win_file:
+          path: 'C:\Temp\foo.conf'
+          state: touch
+
